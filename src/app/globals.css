@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cream: #f6f1e8;
+    --ink: #0c0c0c;
+    --accent: #c68a4c;
+    --accent-hover: #b3783a;
+    --accent-light: #efe0cf;
+    --dark-surface: #141414;
+    --dark-surface-elevated: #1a1a1a;
+    --dark-border: rgba(246, 241, 232, 0.12);
+    --light-border: rgba(12, 12, 12, 0.09);
+    --font-serif: var(--font-serif), "Instrument Serif", Georgia, serif;
+    --font-mono: var(--font-mono), "JetBrains Mono", monospace;
+    --font-sans: var(--font-sans), "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+html {
+  background-color: #f6f1e8;
+  color: #0c0c0c;
+  overflow-x: clip;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* 1. Grain Texture */
+.pl-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.045'/%3E%3C/svg%3E");
+}
+
+.pl-grain-dark {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseDark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseDark)' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+/* 2. Kinetic Word Masks */
+.pl-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  line-height: 1.12;
+}
+
+.pl-word {
+  display: inline-block;
+  transform: translate3d(0, 112%, 0);
+  opacity: 0;
+  animation: plWordReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes plWordReveal {
+  0% {
+    transform: translate3d(0, 112%, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0%, 0);
+    opacity: 1;
+  }
+}
+
+/* 3. Roller Buttons (.pl-roll) */
+.pl-roll {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.pl-roll:active {
+  transform: scale(0.975);
+}
+
+.pl-roll-track {
+  display: inline-flex;
+  flex-direction: column;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.pl-roll:hover .pl-roll-track {
+  transform: translateY(-50%);
+}
+
+.pl-roll-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 100%;
+  white-space: nowrap;
+}
+
+/* 4. Floating Drift Cards */
+@keyframes plDriftA {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(1.2deg);
+  }
+  50% {
+    transform: translate3d(8px, -14px, 0) rotate(-1.4deg);
+  }
+}
+
+@keyframes plDriftB {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-1.8deg);
+  }
+  50% {
+    transform: translate3d(-10px, 16px, 0) rotate(2deg);
+  }
+}
+
+.pl-drift-a {
+  animation: plDriftA 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.pl-drift-b {
+  animation: plDriftB 10s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* 5. Infinite Smooth Marquee */
+@keyframes plMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.pl-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: plMarquee 32s linear infinite;
+  will-change: transform;
+}
+
+.pl-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* 6. Interactive Tiles (.pl-tile) */
+.pl-tile {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+  will-change: transform;
+}
+
+.pl-tile:hover {
+  transform: translateY(-6px);
+  border-color: rgba(198, 138, 76, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 30px rgba(198, 138, 76, 0.12);
+}
+
+/* 7. Wood Texture Micro Grids */
+.bg-parquet-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(12, 12, 12, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(12, 12, 12, 0.05) 1px, transparent 1px);
+}
+
+.bg-parquet-pattern-dark {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(246, 241, 232, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(246, 241, 232, 0.04) 1px, transparent 1px);
+}
+
+/* 8. Pulsing Dot */
+@keyframes plPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+}
+
+.pl-pulse {
+  animation: plPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 9. Animated Scroll Line */
+@keyframes plScrollLine {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  50.1% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+.pl-scroll-line {
+  animation: plScrollLine 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}

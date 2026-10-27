@@ -142,15 +142,22 @@ export const HeroCurtain: React.FC<HeroCurtainProps> = ({ scrollProgress }) => {
             </div>
 
             {/* Quick Guarantees Micro-list */}
-            <div className="flex flex-wrap items-center gap-y-2 gap-x-6 pt-1 text-[11px] sm:text-xs font-mono uppercase tracking-[0.14em] text-[#0c0c0c]/60">
+            <div className="w-full grid grid-cols-2 gap-y-2 gap-x-2.5 sm:w-auto sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-2 pt-1 text-[10px] sm:text-xs font-mono uppercase tracking-[0.08em] sm:tracking-[0.14em] text-[#0c0c0c]/60">
               <span className="flex items-center gap-1.5">
-                <Check className="w-3.5 h-3.5 text-[#c68a4c]" /> Matje falas në vend
+                <Check className="w-3.5 h-3.5 text-[#c68a4c] shrink-0" />
+                <span className="truncate">Matje falas në vend</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#c68a4c]" /> Garanci me kontratë
+                <ShieldCheck className="w-3.5 h-3.5 text-[#c68a4c] shrink-0" />
+                <span className="truncate">Garanci me kontratë</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <Ruler className="w-3.5 h-3.5 text-[#c68a4c]" /> Prerje pa pluhur
+                <Ruler className="w-3.5 h-3.5 text-[#c68a4c] shrink-0" />
+                <span className="truncate">Prerje pa pluhur</span>
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#c68a4c] shrink-0" />
+                <span className="truncate">Montim profesional</span>
               </span>
             </div>
 

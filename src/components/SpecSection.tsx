@@ -57,7 +57,60 @@ export const SpecSection: React.FC = () => {
 
         {/* Technical Specification Matrix / Table */}
         <div className="bg-white rounded-xl border border-[#0c0c0c]/10 shadow-[0_4px_24px_rgba(12,12,12,0.03)] overflow-hidden mb-20">
-          <div className="overflow-x-auto">
+          
+          {/* MOBILE VIEW: Specs placed underneath (nga ana poshtë) */}
+          <div className="block md:hidden divide-y divide-[#0c0c0c]/8">
+            {TECHNICAL_SPECS.map((spec) => (
+              <div key={spec.id} className="p-5 space-y-3.5 hover:bg-[#fcfaf5] transition-colors">
+                <div>
+                  <div className="font-sans font-semibold text-base text-[#0c0c0c] leading-snug">
+                    {spec.name}
+                  </div>
+                  <span className="text-[10.5px] text-[#c68a4c] font-mono uppercase tracking-wider block mt-1">
+                    {spec.origin} · {spec.badge}
+                  </span>
+                </div>
+
+                {/* Key specs underneath in a clean 2-column grid */}
+                <div className="grid grid-cols-2 gap-2 pt-1 font-mono">
+                  <div className="bg-[#f6f1e8]/70 p-2.5 rounded-lg border border-[#0c0c0c]/5">
+                    <span className="block text-[10px] text-[#0c0c0c]/50 uppercase tracking-wider">Trashësia</span>
+                    <span className="font-semibold text-[#0c0c0c] text-xs">{spec.thickness}</span>
+                  </div>
+
+                  <div className="bg-[#f6f1e8]/70 p-2.5 rounded-lg border border-[#0c0c0c]/5">
+                    <span className="block text-[10px] text-[#0c0c0c]/50 uppercase tracking-wider">Klasa e Konsumit</span>
+                    <span className="font-semibold text-[#0c0c0c] text-xs">{spec.durabilityClass}</span>
+                  </div>
+
+                  <div className="bg-[#f6f1e8]/70 p-2.5 rounded-lg border border-[#0c0c0c]/5">
+                    <span className="block text-[10px] text-[#0c0c0c]/50 uppercase tracking-wider">Sistemi</span>
+                    <span className="font-medium text-[#0c0c0c]/85 text-xs truncate block">{spec.lockingSystem}</span>
+                  </div>
+
+                  <div className="bg-[#f6f1e8]/70 p-2.5 rounded-lg border border-[#0c0c0c]/5">
+                    <span className="block text-[10px] text-[#0c0c0c]/50 uppercase tracking-wider">Garancia</span>
+                    <span className="font-semibold text-[#0c0c0c] text-xs">{spec.warrantyYears}</span>
+                  </div>
+                </div>
+
+                {/* Feature Badges */}
+                <div className="flex flex-wrap gap-2 pt-1 font-mono text-[11px]">
+                  <span className="inline-flex items-center gap-1.5 text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                    <Droplets className="w-3 h-3 shrink-0" />
+                    <span>{spec.waterResistance}</span>
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+                    <Flame className="w-3 h-3 text-[#c68a4c] shrink-0" />
+                    <span>{spec.heatingCompatibility}</span>
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* DESKTOP VIEW: Original Full Matrix Table */}
+          <div className="hidden md:block overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="bg-[#f0ebe0] border-b border-[#0c0c0c]/10 font-mono text-[11px] uppercase tracking-[0.16em] text-[#0c0c0c]/70">

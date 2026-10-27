@@ -43,15 +43,15 @@ export const RollButton: React.FC<RollButtonProps> = ({
   };
 
   const content = (
-    <div className="pl-roll-track h-[44px]">
+    <div className="pl-roll-track w-full h-[44px]">
       {/* Top state */}
-      <span className="pl-roll-label h-[44px] px-6 text-[13px] tracking-[0.08em] uppercase font-mono font-medium">
+      <span className="pl-roll-label w-full justify-center h-[44px] px-2 sm:px-6 text-[11px] sm:text-[13px] tracking-[0.03em] sm:tracking-[0.08em] uppercase font-mono font-medium">
         {icon && iconPosition === "left" && <span className="mr-1">{icon}</span>}
         <span>{label}</span>
         {icon && iconPosition === "right" && <span className="ml-1">{icon}</span>}
       </span>
       {/* Rolled state */}
-      <span className="pl-roll-label h-[44px] px-6 text-[13px] tracking-[0.08em] uppercase font-mono font-medium opacity-95">
+      <span className="pl-roll-label w-full justify-center h-[44px] px-2 sm:px-6 text-[11px] sm:text-[13px] tracking-[0.03em] sm:tracking-[0.08em] uppercase font-mono font-medium opacity-95">
         {icon && iconPosition === "left" && <span className="mr-1">{icon}</span>}
         <span>{displaySubLabel}</span>
         {icon && iconPosition === "right" && <span className="ml-1">{icon}</span>}

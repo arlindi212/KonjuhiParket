@@ -119,7 +119,7 @@ export const HeroCurtain: React.FC<HeroCurtainProps> = ({ scrollProgress }) => {
             </p>
 
             {/* Primary Action Buttons with .pl-roll */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="w-full grid grid-cols-2 gap-2.5 sm:w-auto sm:flex sm:flex-wrap sm:items-center sm:gap-4 pt-2">
               <RollButton
                 label="Porosit në WhatsApp"
                 subLabel="Matje Pa Pagesë ↗"
@@ -129,7 +129,7 @@ export const HeroCurtain: React.FC<HeroCurtainProps> = ({ scrollProgress }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="primary"
-                className="text-sm shadow-md"
+                className="w-full sm:w-auto text-xs sm:text-sm shadow-md"
               />
 
               <RollButton
@@ -137,7 +137,7 @@ export const HeroCurtain: React.FC<HeroCurtainProps> = ({ scrollProgress }) => {
                 subLabel="Eksploro Drurin ↓"
                 href="#koleksionet"
                 variant="secondary"
-                className="text-sm"
+                className="w-full sm:w-auto text-xs sm:text-sm"
               />
             </div>
 

@@ -96,25 +96,27 @@ export const Footer: React.FC = () => {
             <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#0c0c0c]/50 block font-semibold">
               Kontakti & Orari
             </span>
-            <div className="space-y-3 font-mono text-xs">
-              <div>
-                <span className="text-[#0c0c0c]/50 block text-[10px] uppercase">Telefonat:</span>
-                <a href={`tel:${BUSINESS_INFO.phones.primaryRaw}`} className="text-[#0c0c0c] font-semibold hover:text-[#c68a4c] block">
-                  {BUSINESS_INFO.phones.primary}
-                </a>
-                <a href={`tel:${BUSINESS_INFO.phones.secondaryRaw}`} className="text-[#0c0c0c] font-semibold hover:text-[#c68a4c] block">
-                  {BUSINESS_INFO.phones.secondary}
-                </a>
+            <div className="space-y-2.5 sm:space-y-3 font-mono text-xs">
+              <div className="flex justify-between items-start py-2 border-b border-[#0c0c0c]/8 sm:border-0 sm:py-0 sm:block">
+                <span className="text-[#0c0c0c]/50 block text-[10px] uppercase font-semibold">Telefonat:</span>
+                <div className="text-right sm:text-left">
+                  <a href={`tel:${BUSINESS_INFO.phones.primaryRaw}`} className="text-[#0c0c0c] font-bold sm:font-semibold hover:text-[#c68a4c] block">
+                    {BUSINESS_INFO.phones.primary}
+                  </a>
+                  <a href={`tel:${BUSINESS_INFO.phones.secondaryRaw}`} className="text-[#0c0c0c] font-semibold hover:text-[#c68a4c] block text-[11px] sm:text-xs text-[#0c0c0c]/70">
+                    {BUSINESS_INFO.phones.secondary}
+                  </a>
+                </div>
               </div>
 
-              <div>
-                <span className="text-[#0c0c0c]/50 block text-[10px] uppercase">Orari i Punës:</span>
-                <p className="text-[#0c0c0c]/80">{BUSINESS_INFO.workingHours}</p>
+              <div className="flex justify-between items-start py-2 border-b border-[#0c0c0c]/8 sm:border-0 sm:py-0 sm:block">
+                <span className="text-[#0c0c0c]/50 block text-[10px] uppercase font-semibold">Orari i Punës:</span>
+                <p className="text-[#0c0c0c]/80 text-right sm:text-left text-[11px] sm:text-xs max-w-[210px] sm:max-w-none">{BUSINESS_INFO.workingHours}</p>
               </div>
 
-              <div>
-                <span className="text-[#0c0c0c]/50 block text-[10px] uppercase">Lokacioni:</span>
-                <p className="text-[#0c0c0c]/80">{BUSINESS_INFO.location}</p>
+              <div className="flex justify-between items-start py-2 sm:py-0 sm:block">
+                <span className="text-[#0c0c0c]/50 block text-[10px] uppercase font-semibold">Lokacioni:</span>
+                <p className="text-[#0c0c0c]/80 text-right sm:text-left text-[11px] sm:text-xs max-w-[210px] sm:max-w-none">{BUSINESS_INFO.location}</p>
               </div>
             </div>
           </div>
@@ -124,13 +126,14 @@ export const Footer: React.FC = () => {
             <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#0c0c0c]/50 block font-semibold">
               Qytetet me Shërbim në Terren
             </span>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-1.5">
               {CITIES_SERVED.map((c) => (
                 <span
                   key={c.city}
-                  className="px-2.5 py-1 rounded bg-[#0c0c0c]/5 border border-[#0c0c0c]/8 text-[11px] font-mono text-[#0c0c0c]/80"
+                  className="px-2.5 py-1.5 sm:py-1 rounded-lg sm:rounded bg-[#0c0c0c]/5 border border-[#0c0c0c]/8 text-[11px] font-mono text-[#0c0c0c]/80 text-center sm:text-left flex items-center justify-center sm:justify-start gap-1.5"
                 >
-                  {c.city}
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#c68a4c] sm:hidden shrink-0"></span>
+                  <span>{c.city}</span>
                 </span>
               ))}
             </div>

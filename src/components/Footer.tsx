@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { BUSINESS_INFO, CITIES_SERVED } from "@/data/business";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, MapPin, ChevronDown } from "lucide-react";
 
 export const Footer: React.FC = () => {
+  const [showCities, setShowCities] = useState<boolean>(false);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -126,20 +128,64 @@ export const Footer: React.FC = () => {
             <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#0c0c0c]/50 block font-semibold">
               Qytetet me Shërbim në Terren
             </span>
-            <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-1.5">
-              {CITIES_SERVED.map((c) => (
-                <span
-                  key={c.city}
-                  className="px-2.5 py-1.5 sm:py-1 rounded-lg sm:rounded bg-[#0c0c0c]/5 border border-[#0c0c0c]/8 text-[11px] font-mono text-[#0c0c0c]/80 text-center sm:text-left flex items-center justify-center sm:justify-start gap-1.5"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#c68a4c] sm:hidden shrink-0"></span>
-                  <span>{c.city}</span>
+
+            {/* Mobile: "Ku gjindemi ne" button that reveals locations only when clicked */}
+            <div className="sm:hidden space-y-3">
+              <button
+                type="button"
+                onClick={() => setShowCities((prev) => !prev)}
+                className="w-full py-3 px-4 rounded-xl bg-white border border-[#0c0c0c]/12 flex items-center justify-between font-mono text-xs uppercase tracking-wider text-[#0c0c0c] font-semibold shadow-xs hover:border-[#c68a4c] transition-all cursor-pointer select-none"
+              >
+                <span className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-[#c68a4c]" />
+                  <span>Ku gjindemi ne</span>
                 </span>
-              ))}
+                <span className="flex items-center gap-1 text-[11px] text-[#c68a4c] font-normal lowercase">
+                  <span>{showCities ? "mbyll" : "shfaq"}</span>
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      showCities ? "rotate-180" : ""
+                    }`}
+                  />
+                </span>
+              </button>
+
+              {showCities && (
+                <div className="space-y-3 pt-1 animate-fadeIn">
+                  <div className="grid grid-cols-2 gap-2">
+                    {CITIES_SERVED.map((c) => (
+                      <span
+                        key={c.city}
+                        className="px-2.5 py-2 rounded-lg bg-[#0c0c0c]/5 border border-[#0c0c0c]/8 text-[11px] font-mono text-[#0c0c0c]/80 text-center flex items-center justify-center gap-1.5"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#c68a4c] shrink-0"></span>
+                        <span>{c.city}</span>
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-[11px] font-mono text-[#c68a4c] pt-1">
+                    ✓ Ekipi ynë vjen në çdo komunë brenda 24 orëve.
+                  </p>
+                </div>
+              )}
             </div>
-            <p className="text-[11px] font-mono text-[#c68a4c] pt-1">
-              ✓ Ekipi ynë vjen në çdo komunë brenda 24 orëve.
-            </p>
+
+            {/* Desktop: Keep visible as originally designed */}
+            <div className="hidden sm:block space-y-3">
+              <div className="flex flex-wrap gap-1.5">
+                {CITIES_SERVED.map((c) => (
+                  <span
+                    key={c.city}
+                    className="px-2.5 py-1 rounded bg-[#0c0c0c]/5 border border-[#0c0c0c]/8 text-[11px] font-mono text-[#0c0c0c]/80"
+                  >
+                    {c.city}
+                  </span>
+                ))}
+              </div>
+              <p className="text-[11px] font-mono text-[#c68a4c] pt-1">
+                ✓ Ekipi ynë vjen në çdo komunë brenda 24 orëve.
+              </p>
+            </div>
           </div>
 
         </div>

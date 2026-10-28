@@ -60,58 +60,74 @@ export const ContactSection: React.FC = () => {
                 {/* Primary Number */}
                 <a
                   href={`tel:${BUSINESS_INFO.phones.primaryRaw}`}
-                  className="flex items-center justify-between p-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-all duration-200 group"
+                  className="flex items-center justify-between p-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#c68a4c]/50 transition-all duration-200 group gap-3"
                 >
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-full bg-[#c68a4c]/20 text-[#c68a4c] flex items-center justify-center group-hover:bg-[#c68a4c] group-hover:text-white transition-colors">
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="w-10 h-10 rounded-full bg-[#c68a4c]/20 text-[#c68a4c] flex items-center justify-center group-hover:bg-[#c68a4c] group-hover:text-white transition-colors shrink-0">
                       <Phone className="w-4 h-4" />
                     </div>
-                    <div>
-                      <span className="block font-mono text-[10px] uppercase tracking-wider text-white/50">
+                    <div className="min-w-0">
+                      <span className="block font-mono text-[10px] uppercase tracking-wider text-white/50 truncate">
                         Numri Kryesor & WhatsApp
                       </span>
-                      <span className="font-mono text-base font-bold text-white group-hover:text-[#c68a4c] transition-colors">
+                      <span className="font-mono text-sm sm:text-base font-bold text-white group-hover:text-[#c68a4c] transition-colors block">
                         {BUSINESS_INFO.phones.primary}
                       </span>
                     </div>
                   </div>
-                  <span className="text-xs font-mono text-[#c68a4c] uppercase tracking-wider hidden sm:inline">
-                    Telefono ↗
+                  <span className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-[#c68a4c]/15 group-hover:bg-[#c68a4c] text-[#c68a4c] group-hover:text-white text-[11px] font-mono uppercase font-bold tracking-wider flex items-center gap-1 transition-all shrink-0">
+                    <span>Telefono</span>
+                    <span>↗</span>
                   </span>
                 </a>
 
                 {/* Secondary Number */}
                 <a
                   href={`tel:${BUSINESS_INFO.phones.secondaryRaw}`}
-                  className="flex items-center justify-between p-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-all duration-200 group"
+                  className="flex items-center justify-between p-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#c68a4c]/50 transition-all duration-200 group gap-3"
                 >
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center group-hover:bg-[#c68a4c] group-hover:text-white transition-colors">
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center group-hover:bg-[#c68a4c] group-hover:text-white transition-colors shrink-0">
                       <Phone className="w-4 h-4" />
                     </div>
-                    <div>
-                      <span className="block font-mono text-[10px] uppercase tracking-wider text-white/50">
+                    <div className="min-w-0">
+                      <span className="block font-mono text-[10px] uppercase tracking-wider text-white/50 truncate">
                         Linja e Dytë
                       </span>
-                      <span className="font-mono text-base font-bold text-white group-hover:text-[#c68a4c] transition-colors">
+                      <span className="font-mono text-sm sm:text-base font-bold text-white group-hover:text-[#c68a4c] transition-colors block">
                         {BUSINESS_INFO.phones.secondary}
                       </span>
                     </div>
                   </div>
-                  <span className="text-xs font-mono text-[#c68a4c] uppercase tracking-wider hidden sm:inline">
-                    Telefono ↗
+                  <span className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-white/10 group-hover:bg-[#c68a4c] text-white/80 group-hover:text-white text-[11px] font-mono uppercase font-bold tracking-wider flex items-center gap-1 transition-all shrink-0">
+                    <span>Telefono</span>
+                    <span>↗</span>
                   </span>
                 </a>
               </div>
             </div>
 
-            {/* Operating Times Tag */}
-            <div className="pt-6 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/60">
-              <span className="flex items-center gap-2">
-                <Clock className="w-3.5 h-3.5 text-[#c68a4c]" />
-                {BUSINESS_INFO.workingHours}
-              </span>
-              <span className="text-emerald-400 font-semibold">Aktive sot</span>
+            {/* Operating Times Tag - Majtas & Djathtas with generous spacing */}
+            <div className="pt-6 border-t border-white/10 flex items-start justify-between gap-4">
+              <div className="flex items-start gap-2.5 min-w-0">
+                <Clock className="w-4 h-4 text-[#c68a4c] shrink-0 mt-0.5" />
+                <div className="space-y-0.5">
+                  <span className="block font-mono text-[10px] uppercase text-white/45 tracking-wider font-semibold">
+                    Orari i Punës
+                  </span>
+                  <p className="font-mono text-xs text-white/85 font-medium leading-snug">
+                    E hënë – E shtunë: 08:00 – 18:00
+                  </p>
+                  <p className="font-mono text-[10.5px] text-white/45">
+                    (E diel me termin paraprak)
+                  </p>
+                </div>
+              </div>
+
+              <div className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[10.5px] sm:text-[11px] font-mono font-bold tracking-wider uppercase shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                <span>Aktive sot</span>
+              </div>
             </div>
           </div>
 

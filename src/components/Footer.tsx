@@ -129,20 +129,20 @@ export const Footer: React.FC = () => {
               Qytetet me Shërbim në Terren
             </span>
 
-            {/* Mobile: High-contrast deep black button "Ku gjindemi ne" that reveals locations only when clicked */}
+            {/* Mobile: Softer warm charcoal black button "Ku gjindemi ne" that reveals locations only when clicked */}
             <div className="sm:hidden space-y-3">
               <button
                 type="button"
                 onClick={() => setShowCities((prev) => !prev)}
-                className="w-full py-3.5 px-4 rounded-2xl bg-black hover:bg-[#141414] text-white border-2 border-black flex items-center justify-between font-mono text-xs uppercase tracking-wider font-bold shadow-[0_6px_20px_rgba(0,0,0,0.22)] active:scale-[0.98] transition-all duration-200 cursor-pointer select-none"
+                className="w-full py-3.5 px-4 rounded-2xl bg-[#1e1d1a] hover:bg-[#282622] text-[#f6f1e8] border border-[#1e1d1a]/80 flex items-center justify-between font-mono text-xs uppercase tracking-wider font-bold shadow-[0_4px_16px_rgba(30,29,26,0.18)] active:scale-[0.98] transition-all duration-200 cursor-pointer select-none"
               >
                 <span className="flex items-center gap-2.5">
                   <span className="w-7 h-7 rounded-full bg-[#c68a4c] flex items-center justify-center text-white shrink-0 shadow-sm">
                     <MapPin className="w-3.5 h-3.5" />
                   </span>
-                  <span className="font-bold text-white text-[12px] tracking-[0.08em]">Ku gjindemi ne</span>
+                  <span className="font-bold text-[#f6f1e8] text-[12px] tracking-[0.08em]">Ku gjindemi ne</span>
                 </span>
-                <span className="px-3 py-1.5 rounded-full bg-white text-black font-bold text-[10px] tracking-wider uppercase flex items-center gap-1.5 shadow-sm shrink-0">
+                <span className="px-3 py-1.5 rounded-full bg-[#f6f1e8] text-[#1e1d1a] font-bold text-[10px] tracking-wider uppercase flex items-center gap-1.5 shadow-sm shrink-0">
                   <span>{showCities ? "Mbyll" : "Shfaq"}</span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform duration-300 ${
@@ -158,7 +158,7 @@ export const Footer: React.FC = () => {
                     {CITIES_SERVED.map((c) => (
                       <span
                         key={c.city}
-                        className="px-2.5 py-2.5 rounded-xl bg-black text-white border border-black/80 text-[11px] font-mono font-medium text-center flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-all"
+                        className="px-2.5 py-2.5 rounded-xl bg-[#252420] text-[#f6f1e8] border border-[#1e1d1a]/30 text-[11px] font-mono font-medium text-center flex items-center justify-center gap-1.5 shadow-xs active:scale-[0.98] transition-all"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-[#c68a4c] shrink-0"></span>
                         <span>{c.city}</span>

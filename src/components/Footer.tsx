@@ -129,21 +129,23 @@ export const Footer: React.FC = () => {
               Qytetet me Shërbim në Terren
             </span>
 
-            {/* Mobile: Sleek Black Button "Ku gjindemi ne" that reveals locations only when clicked */}
+            {/* Mobile: High-contrast deep black button "Ku gjindemi ne" that reveals locations only when clicked */}
             <div className="sm:hidden space-y-3">
               <button
                 type="button"
                 onClick={() => setShowCities((prev) => !prev)}
-                className="w-full py-3.5 px-5 rounded-full bg-[#0c0c0c] hover:bg-[#1a1a1a] text-[#f6f1e8] border border-[#0c0c0c] flex items-center justify-between font-mono text-xs uppercase tracking-wider font-semibold shadow-md transition-all duration-300 cursor-pointer select-none"
+                className="w-full py-3.5 px-4 rounded-2xl bg-black hover:bg-[#141414] text-white border-2 border-black flex items-center justify-between font-mono text-xs uppercase tracking-wider font-bold shadow-[0_6px_20px_rgba(0,0,0,0.22)] active:scale-[0.98] transition-all duration-200 cursor-pointer select-none"
               >
                 <span className="flex items-center gap-2.5">
-                  <MapPin className="w-4 h-4 text-[#c68a4c]" />
-                  <span>Ku gjindemi ne</span>
+                  <span className="w-7 h-7 rounded-full bg-[#c68a4c] flex items-center justify-center text-white shrink-0 shadow-sm">
+                    <MapPin className="w-3.5 h-3.5" />
+                  </span>
+                  <span className="font-bold text-white text-[12px] tracking-[0.08em]">Ku gjindemi ne</span>
                 </span>
-                <span className="flex items-center gap-1.5 text-[11px] text-[#c68a4c] font-normal lowercase">
-                  <span>{showCities ? "mbyll" : "shfaq"}</span>
+                <span className="px-3 py-1.5 rounded-full bg-white text-black font-bold text-[10px] tracking-wider uppercase flex items-center gap-1.5 shadow-sm shrink-0">
+                  <span>{showCities ? "Mbyll" : "Shfaq"}</span>
                   <ChevronDown
-                    className={`w-4 h-4 text-[#c68a4c] transition-transform duration-300 ${
+                    className={`w-3.5 h-3.5 transition-transform duration-300 ${
                       showCities ? "rotate-180" : ""
                     }`}
                   />
@@ -156,14 +158,14 @@ export const Footer: React.FC = () => {
                     {CITIES_SERVED.map((c) => (
                       <span
                         key={c.city}
-                        className="px-2.5 py-2 rounded-lg bg-white/80 border border-[#0c0c0c]/8 text-[11px] font-mono text-[#0c0c0c]/80 text-center flex items-center justify-center gap-1.5 shadow-xs"
+                        className="px-2.5 py-2.5 rounded-xl bg-white border border-[#0c0c0c]/12 text-[11px] font-mono text-[#0c0c0c] font-semibold text-center flex items-center justify-center gap-1.5 shadow-xs hover:border-[#c68a4c] transition-colors"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-[#c68a4c] shrink-0"></span>
                         <span>{c.city}</span>
                       </span>
                     ))}
                   </div>
-                  <p className="text-[11px] font-mono text-[#c68a4c] pt-1">
+                  <p className="text-[11px] font-mono text-[#c68a4c] pt-1 font-semibold">
                     ✓ Ekipi ynë vjen në çdo komunë brenda 24 orëve.
                   </p>
                 </div>

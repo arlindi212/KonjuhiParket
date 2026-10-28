@@ -45,11 +45,11 @@ export const HeroCurtain: React.FC<HeroCurtainProps> = ({ scrollProgress }) => {
       <div className="absolute inset-0 bg-parquet-pattern opacity-40 pointer-events-none" />
 
       {/* Main Content Area */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 sm:pt-28 md:pt-32 flex-1 flex flex-col justify-start sm:justify-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 sm:pt-28 md:pt-32 flex-1 flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Editorial Headline & Actions */}
-          <div className="lg:col-span-7 flex flex-col items-start space-y-4 sm:space-y-8">
+          <div className="lg:col-span-7 flex flex-col items-start space-y-6 sm:space-y-8">
             
             {/* Top Tag with Pulsing Golden Amber Dot */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0c0c0c]/5 border border-[#0c0c0c]/10 text-[#0c0c0c] text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em]">
@@ -113,7 +113,7 @@ export const HeroCurtain: React.FC<HeroCurtainProps> = ({ scrollProgress }) => {
             </h1>
 
             {/* Editorial Subtitle */}
-            <p className="text-sm sm:text-lg text-[#0c0c0c]/75 max-w-xl font-normal leading-relaxed">
+            <p className="text-base sm:text-lg text-[#0c0c0c]/75 max-w-xl font-normal leading-relaxed">
               Koleksione të përzgjedhura të parketit natyral dhe laminatit gjerman AC4/AC5. 
               Mjeshtër me përvojë të gjatë që marrin përsipër çdo detaj nga matja në terren deri te përfundimi i përkryer.
             </p>

@@ -56,53 +56,53 @@ export const ContactSection: React.FC = () => {
                 Bisedoni direkt me menaxherin tonë teknik
               </h3>
 
-              <div className="space-y-4 mb-8">
-                {/* Primary Number */}
+              <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5 mb-8">
+                {/* Primary Number (Majtas) */}
                 <a
                   href={`tel:${BUSINESS_INFO.phones.primaryRaw}`}
-                  className="flex items-center justify-between p-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#c68a4c]/50 transition-all duration-200 group gap-3"
+                  className="p-3.5 sm:p-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#c68a4c]/50 transition-all duration-200 group flex flex-col justify-between"
                 >
-                  <div className="flex items-center gap-3.5 min-w-0">
-                    <div className="w-10 h-10 rounded-full bg-[#c68a4c]/20 text-[#c68a4c] flex items-center justify-center group-hover:bg-[#c68a4c] group-hover:text-white transition-colors shrink-0">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-8 h-8 rounded-full bg-[#c68a4c]/20 text-[#c68a4c] flex items-center justify-center group-hover:bg-[#c68a4c] group-hover:text-white transition-colors shrink-0">
                       <Phone className="w-4 h-4" />
                     </div>
-                    <div className="min-w-0">
-                      <span className="block font-mono text-[10px] uppercase tracking-wider text-white/50 truncate">
-                        Numri Kryesor & WhatsApp
-                      </span>
-                      <span className="font-mono text-sm sm:text-base font-bold text-white group-hover:text-[#c68a4c] transition-colors block">
-                        {BUSINESS_INFO.phones.primary}
-                      </span>
-                    </div>
+                    <span className="px-2 py-0.5 rounded bg-[#c68a4c]/15 group-hover:bg-[#c68a4c] text-[#c68a4c] group-hover:text-white text-[10px] font-mono uppercase font-bold tracking-wider flex items-center gap-0.5 transition-colors">
+                      <span>Thirr</span>
+                      <span>↗</span>
+                    </span>
                   </div>
-                  <span className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-[#c68a4c]/15 group-hover:bg-[#c68a4c] text-[#c68a4c] group-hover:text-white text-[11px] font-mono uppercase font-bold tracking-wider flex items-center gap-1 transition-all shrink-0">
-                    <span>Telefono</span>
-                    <span>↗</span>
-                  </span>
+                  <div>
+                    <span className="block font-mono text-[9.5px] uppercase tracking-wider text-white/50 truncate">
+                      Kryesor & WhatsApp
+                    </span>
+                    <span className="font-mono text-[12px] sm:text-sm font-bold text-white group-hover:text-[#c68a4c] transition-colors block mt-0.5 truncate">
+                      {BUSINESS_INFO.phones.primary}
+                    </span>
+                  </div>
                 </a>
 
-                {/* Secondary Number */}
+                {/* Secondary Number (Djathtas) */}
                 <a
                   href={`tel:${BUSINESS_INFO.phones.secondaryRaw}`}
-                  className="flex items-center justify-between p-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#c68a4c]/50 transition-all duration-200 group gap-3"
+                  className="p-3.5 sm:p-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#c68a4c]/50 transition-all duration-200 group flex flex-col justify-between"
                 >
-                  <div className="flex items-center gap-3.5 min-w-0">
-                    <div className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center group-hover:bg-[#c68a4c] group-hover:text-white transition-colors shrink-0">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center group-hover:bg-[#c68a4c] group-hover:text-white transition-colors shrink-0">
                       <Phone className="w-4 h-4" />
                     </div>
-                    <div className="min-w-0">
-                      <span className="block font-mono text-[10px] uppercase tracking-wider text-white/50 truncate">
-                        Linja e Dytë
-                      </span>
-                      <span className="font-mono text-sm sm:text-base font-bold text-white group-hover:text-[#c68a4c] transition-colors block">
-                        {BUSINESS_INFO.phones.secondary}
-                      </span>
-                    </div>
+                    <span className="px-2 py-0.5 rounded bg-white/10 group-hover:bg-[#c68a4c] text-white/75 group-hover:text-white text-[10px] font-mono uppercase font-bold tracking-wider flex items-center gap-0.5 transition-colors">
+                      <span>Thirr</span>
+                      <span>↗</span>
+                    </span>
                   </div>
-                  <span className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-white/10 group-hover:bg-[#c68a4c] text-white/80 group-hover:text-white text-[11px] font-mono uppercase font-bold tracking-wider flex items-center gap-1 transition-all shrink-0">
-                    <span>Telefono</span>
-                    <span>↗</span>
-                  </span>
+                  <div>
+                    <span className="block font-mono text-[9.5px] uppercase tracking-wider text-white/50 truncate">
+                      Linja e Dytë
+                    </span>
+                    <span className="font-mono text-[12px] sm:text-sm font-bold text-white group-hover:text-[#c68a4c] transition-colors block mt-0.5 truncate">
+                      {BUSINESS_INFO.phones.secondary}
+                    </span>
+                  </div>
                 </a>
               </div>
             </div>

@@ -12,23 +12,20 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative bg-[#0c0c0c] text-[#f6f1e8] pt-20 pb-8 pl-grain-dark overflow-hidden border-t border-white/10">
+    <footer className="relative bg-[#f6f1e8] text-[#0c0c0c] pt-20 pb-8 pl-grain overflow-hidden border-t border-[#0c0c0c]/10">
       
-      {/* Subtle Ambient Wood/Gold Background Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#c68a4c]/5 rounded-full blur-[140px] pointer-events-none" />
-
       {/* Parquet Pattern Overlay */}
-      <div className="absolute inset-0 bg-parquet-pattern opacity-10 pointer-events-none invert" />
+      <div className="absolute inset-0 bg-parquet-pattern opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-16 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-16 border-b border-[#0c0c0c]/10">
           
           {/* Column 1: Brand & USP */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-sm bg-white/10 border border-white/15 text-[#f6f1e8] flex items-center justify-center">
+              <div className="w-9 h-9 rounded-sm bg-[#0c0c0c] text-[#f6f1e8] flex items-center justify-center">
                 <div className="w-5 h-5 flex flex-col justify-between py-0.5">
                   <div className="flex gap-0.5 h-1.5">
                     <div className="w-1/2 bg-[#f6f1e8] rounded-[0.5px]"></div>
@@ -41,7 +38,7 @@ export const Footer: React.FC = () => {
                 </div>
               </div>
 
-              <span className="font-serif text-2xl text-white leading-none">
+              <span className="font-serif text-2xl text-[#0c0c0c] leading-none">
                 Konjuhi <span className="italic text-[#c68a4c]">Parket</span>
               </span>
             </div>
@@ -50,13 +47,13 @@ export const Footer: React.FC = () => {
               {BUSINESS_INFO.usp}
             </p>
 
-            <p className="text-sm text-white/70 leading-relaxed max-w-sm">
+            <p className="text-sm text-[#0c0c0c]/70 leading-relaxed max-w-sm">
               Standard i lartë në tregtinë dhe shtrirjen e parketit natyral, laminatit zviceran e gjerman, dhe profileve MDF. Përvojë mbi 15-vjeçare në dysheme rezidenciale dhe komerciale.
             </p>
 
             <div className="pt-2">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono uppercase tracking-widest text-white/80">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0c0c0c]/5 border border-[#0c0c0c]/10 text-[10px] font-mono uppercase tracking-widest text-[#0c0c0c]/80">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
                 Kosovë · Matje dhe Këshillim Falas
               </span>
             </div>
@@ -64,10 +61,10 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Navigation Links */}
           <div className="lg:col-span-2 space-y-4">
-            <span className="font-mono text-xs uppercase tracking-[0.18em] text-white/45 block font-semibold">
+            <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#0c0c0c]/50 block font-semibold">
               Navigimi
             </span>
-            <ul className="space-y-2.5 font-mono text-xs uppercase tracking-wider text-white/70">
+            <ul className="space-y-2.5 font-mono text-xs uppercase tracking-wider text-[#0c0c0c]/80">
               <li>
                 <a href="#koleksionet" className="hover:text-[#c68a4c] transition-colors">
                   Koleksionet
@@ -98,55 +95,55 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Contact & Hours */}
           <div className="lg:col-span-3 space-y-4">
-            <span className="font-mono text-xs uppercase tracking-[0.18em] text-white/45 block font-semibold">
+            <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#0c0c0c]/50 block font-semibold">
               Kontakti & Orari
             </span>
             <div className="space-y-2.5 sm:space-y-3 font-mono text-xs">
-              <div className="flex justify-between items-start py-2 border-b border-white/10 sm:border-0 sm:py-0 sm:block">
-                <span className="text-white/50 block text-[10px] uppercase font-semibold">Telefonat:</span>
+              <div className="flex justify-between items-start py-2 border-b border-[#0c0c0c]/8 sm:border-0 sm:py-0 sm:block">
+                <span className="text-[#0c0c0c]/50 block text-[10px] uppercase font-semibold">Telefonat:</span>
                 <div className="text-right sm:text-left">
-                  <a href={`tel:${BUSINESS_INFO.phones.primaryRaw}`} className="text-white font-bold sm:font-semibold hover:text-[#c68a4c] block">
+                  <a href={`tel:${BUSINESS_INFO.phones.primaryRaw}`} className="text-[#0c0c0c] font-bold sm:font-semibold hover:text-[#c68a4c] block">
                     {BUSINESS_INFO.phones.primary}
                   </a>
-                  <a href={`tel:${BUSINESS_INFO.phones.secondaryRaw}`} className="text-white/70 font-semibold hover:text-[#c68a4c] block text-[11px] sm:text-xs">
+                  <a href={`tel:${BUSINESS_INFO.phones.secondaryRaw}`} className="text-[#0c0c0c] font-semibold hover:text-[#c68a4c] block text-[11px] sm:text-xs text-[#0c0c0c]/70">
                     {BUSINESS_INFO.phones.secondary}
                   </a>
                 </div>
               </div>
 
-              <div className="flex justify-between items-start py-2 border-b border-white/10 sm:border-0 sm:py-0 sm:block">
-                <span className="text-white/50 block text-[10px] uppercase font-semibold">Orari i Punës:</span>
-                <p className="text-white/80 text-right sm:text-left text-[11px] sm:text-xs max-w-[210px] sm:max-w-none">{BUSINESS_INFO.workingHours}</p>
+              <div className="flex justify-between items-start py-2 border-b border-[#0c0c0c]/8 sm:border-0 sm:py-0 sm:block">
+                <span className="text-[#0c0c0c]/50 block text-[10px] uppercase font-semibold">Orari i Punës:</span>
+                <p className="text-[#0c0c0c]/80 text-right sm:text-left text-[11px] sm:text-xs max-w-[210px] sm:max-w-none">{BUSINESS_INFO.workingHours}</p>
               </div>
 
               <div className="flex justify-between items-start py-2 sm:py-0 sm:block">
-                <span className="text-white/50 block text-[10px] uppercase font-semibold">Lokacioni:</span>
-                <p className="text-white/80 text-right sm:text-left text-[11px] sm:text-xs max-w-[210px] sm:max-w-none">{BUSINESS_INFO.location}</p>
+                <span className="text-[#0c0c0c]/50 block text-[10px] uppercase font-semibold">Lokacioni:</span>
+                <p className="text-[#0c0c0c]/80 text-right sm:text-left text-[11px] sm:text-xs max-w-[210px] sm:max-w-none">{BUSINESS_INFO.location}</p>
               </div>
             </div>
           </div>
 
           {/* Column 4: Kosovo Cities Served */}
           <div className="lg:col-span-3 space-y-4">
-            <span className="font-mono text-xs uppercase tracking-[0.18em] text-white/45 block font-semibold">
+            <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#0c0c0c]/50 block font-semibold">
               Qytetet me Shërbim në Terren
             </span>
 
-            {/* Mobile: "Ku gjindemi ne" button that reveals locations only when clicked */}
+            {/* Mobile: Sleek Black Button "Ku gjindemi ne" that reveals locations only when clicked */}
             <div className="sm:hidden space-y-3">
               <button
                 type="button"
                 onClick={() => setShowCities((prev) => !prev)}
-                className="w-full py-3 px-4 rounded-xl bg-[#161616] border border-white/15 flex items-center justify-between font-mono text-xs uppercase tracking-wider text-white font-semibold shadow-xs hover:border-[#c68a4c] transition-all cursor-pointer select-none"
+                className="w-full py-3.5 px-5 rounded-full bg-[#0c0c0c] hover:bg-[#1a1a1a] text-[#f6f1e8] border border-[#0c0c0c] flex items-center justify-between font-mono text-xs uppercase tracking-wider font-semibold shadow-md transition-all duration-300 cursor-pointer select-none"
               >
-                <span className="flex items-center gap-2">
+                <span className="flex items-center gap-2.5">
                   <MapPin className="w-4 h-4 text-[#c68a4c]" />
                   <span>Ku gjindemi ne</span>
                 </span>
-                <span className="flex items-center gap-1 text-[11px] text-[#c68a4c] font-normal lowercase">
+                <span className="flex items-center gap-1.5 text-[11px] text-[#c68a4c] font-normal lowercase">
                   <span>{showCities ? "mbyll" : "shfaq"}</span>
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-300 ${
+                    className={`w-4 h-4 text-[#c68a4c] transition-transform duration-300 ${
                       showCities ? "rotate-180" : ""
                     }`}
                   />
@@ -159,7 +156,7 @@ export const Footer: React.FC = () => {
                     {CITIES_SERVED.map((c) => (
                       <span
                         key={c.city}
-                        className="px-2.5 py-2 rounded-lg bg-white/[0.05] border border-white/10 text-[11px] font-mono text-white/85 text-center flex items-center justify-center gap-1.5"
+                        className="px-2.5 py-2 rounded-lg bg-white/80 border border-[#0c0c0c]/8 text-[11px] font-mono text-[#0c0c0c]/80 text-center flex items-center justify-center gap-1.5 shadow-xs"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-[#c68a4c] shrink-0"></span>
                         <span>{c.city}</span>
@@ -179,7 +176,7 @@ export const Footer: React.FC = () => {
                 {CITIES_SERVED.map((c) => (
                   <span
                     key={c.city}
-                    className="px-2.5 py-1 rounded bg-white/[0.05] border border-white/10 text-[11px] font-mono text-white/80 hover:text-white hover:border-[#c68a4c] transition-colors"
+                    className="px-2.5 py-1 rounded bg-[#0c0c0c]/5 border border-[#0c0c0c]/8 text-[11px] font-mono text-[#0c0c0c]/80 hover:text-[#c68a4c] transition-colors"
                   >
                     {c.city}
                   </span>
@@ -194,7 +191,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Footer Sub-row */}
-        <div className="py-6 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-white/50 border-b border-white/10 gap-4">
+        <div className="py-6 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-[#0c0c0c]/60 border-b border-[#0c0c0c]/10 gap-4">
           <p>
             © 2026 {BUSINESS_INFO.name}. Të gjitha të drejtat të rezervuara.
           </p>
@@ -202,7 +199,7 @@ export const Footer: React.FC = () => {
           <button
             type="button"
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-white/80 hover:text-[#c68a4c] uppercase tracking-wider font-semibold transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 text-[#0c0c0c] hover:text-[#c68a4c] uppercase tracking-wider font-semibold transition-colors cursor-pointer"
           >
             <span>Kthehu në krye</span>
             <ArrowUp className="w-3.5 h-3.5" />
@@ -211,7 +208,7 @@ export const Footer: React.FC = () => {
 
         {/* Giant Editorial Watermark: KONJUHI */}
         <div className="w-full text-center overflow-hidden pt-6 pb-2 pointer-events-none select-none">
-          <span className="font-serif text-[18vw] leading-[0.78] tracking-[-0.03em] font-normal text-white/[0.04] block uppercase">
+          <span className="font-serif text-[18vw] leading-[0.78] tracking-[-0.03em] font-normal text-[#0c0c0c]/[0.08] block uppercase">
             KONJUHI
           </span>
         </div>
